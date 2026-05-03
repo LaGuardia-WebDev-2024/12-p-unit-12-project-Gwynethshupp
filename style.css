@@ -5,9 +5,10 @@
   min-height: 160px;
   margin-top: 10px;
   margin-bottom: 20px;
+
 }
 
-#book-result {
+#food-result {
   background: rgb(143, 227, 91);
   border: 5px solid rgb(62, 123, 42);
   font-size: 24px;
@@ -21,3 +22,9 @@ hr {
   background-color: rgb(30, 98, 23);
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
+
+img { 
+  width: 150px;
+margin: 10px;
+}
+

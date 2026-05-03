@@ -21,40 +21,45 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Gwen</h1>
+
+  
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 Who is my favorite survior 50 player?
         <select id="movie-answer">
-          <option value="Savanah ">Savanah</option>
+          <option value="Savannah">Savannah</option>
           <option value="Rizo">Rizo</option>
           <option value="Cirie">Cirie</option>
           <option value="Q">Q</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
+      <img id="movie-image" src="" style="display: none;">
     </div>
     <hr />
-    <!-- Book Question -->
+    <!-- food Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        😋 What is my favorite food?
+        <select id="food-answer">
+          <option value="Grilled Cheese">Grilled Cheese </option>
+          <option value="Pizza"> Pizza</option>
+          <option value="Salad">Salad</option>
+          <option value="Quesadilla">Quesadilla</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result">
+    <div id="food-result">
       <p id="book-text"></p>
+      <img id="food-image" src="" style="display: none;">
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -66,27 +71,75 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
+        if (answer === "Rizo") {
           $("#movie-text").text("YESSSS!");
+          $("#movie-image")
+          .attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK0GbutUph-MOe8ib0Eg8hLLGb0rMCy0qxHw&s")
+          .fadeIn();
+        } 
+          else if (answer === "Savannah") {
+          $("#movie-text").text("Close! but no");
+           $("#movie-image")
+          .attr("src", "https://www.news-leader.com/gcdn/authoring/authoring-images/2025/12/17/PDEM/87817065007-3051566-04133-b.jpg")
+          .fadeIn();
+        } 
+         else if (answer === "Cirie") {
+          $("#movie-text").text("Love her! but no");
+           $("#movie-image")
+          .attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbuIkaIxDxOU3iHEEW0D0jB4isuNRNTVV_mqmMIBZxiQ&s")
+          .fadeIn();
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#movie-text").text("Funniest!but not favorite!")
+        $("#movie-image")
+          .attr("src", "https://inside-survivor.ams3.digitaloceanspaces.com/wp-content/uploads/2024/04/Screenshot-2024-04-19-at-16.47.23-1024x599.jpg")
+          .fadeIn();
         }
+
+        $("#movie-result").hide().slideDown();
       });
 
       //=======================Book Question jQuery Code
       $("#book-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#food-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
+        if (answer === "Grilled Cheese") {
           $("#book-text").text("YESSSS!");
+          $("#food-image")
+          .attr("src", "https://mindovermunch.com/wp-content/uploads/2023/01/Ultimate-Grilled-Cheese-Sandwich-2.jpg")
+          .fadeIn();
         } 
+        
+        else if  (answer === "Salad") {
+          $("#book-text").text("You're so off...");
+          $("#food-image")
+          .attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf7HPAYeQvcvUiOMJIlCenvbekK5bv3kEh8w&s")
+          .fadeIn();
+        } 
+        
+        else if  (answer === "Quesadilla") {
+          $("#book-text").text("Closer...");
+          $("#food-image")
+          .attr("src", "https://www.simplyrecipes.com/thmb/YXIrmsOBXh5Cc5MAiBJgTaYO_0I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Quesadilla-LEAD-1-b8e325610a7c46e1b6b6c2208d7ed4ee.jpg")
+          .fadeIn();
+        } 
+
         else {
-          $("#book-text").text("Try Again!");
+          $("#book-text").text("Close!"); $("#food-image")
+          .attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf43HHkxMifdLowHlt8lH1uZoITAGDgEBBHw&s")
+          .fadeIn();
         }
+        $("#food-result").hide().slideDown();
+      });
+
+$("img").click(function () {
+$(this).animate({
+width:"600px",
+  opacity: 0.7
+}, 500);
       });
       
     </script>
