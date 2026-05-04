@@ -75,7 +75,9 @@ Select ONE Additional Feature to Add
           $("#movie-text").text("YESSSS!");
           $("#movie-image")
           .attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK0GbutUph-MOe8ib0Eg8hLLGb0rMCy0qxHw&s")
-          .fadeIn();
+          .fadeIn()
+        .animate({ 
+          width:"200px"});
         } 
           else if (answer === "Savannah") {
           $("#movie-text").text("Close! but no");
@@ -110,7 +112,10 @@ Select ONE Additional Feature to Add
           $("#book-text").text("YESSSS!");
           $("#food-image")
           .attr("src", "https://mindovermunch.com/wp-content/uploads/2023/01/Ultimate-Grilled-Cheese-Sandwich-2.jpg")
-          .fadeIn();
+          .fadeIn()
+          .animate({
+            width:"400px"
+          });
         } 
         
         else if  (answer === "Salad") {
